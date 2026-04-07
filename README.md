@@ -75,8 +75,9 @@ A digital modulation technique where the amplitude of the carrier signal is vari
 <li><b>FSK (Frequency Shift Keying)</b>  
 A modulation method where the frequency of the carrier signal changes based on binary input (0s and 1s).</li>
 
-<li><b>PSK (Phase Shift Keying)</b>  
-A digital modulation scheme where the phase of the carrier signal is altered to represent data.</li>
+<li><b>PCM (Pulse Code Modulation)</b>  
+PCM (Pulse Code Modulation) translates analog signals into digital data by sampling and quantizing them into binary code. It does not modulate a carrier wave; instead, it provides the raw digital representation of a signal.
+</li>
 
 <li><b>Amplitude Modulation (AM)</b>  
 The amplitude of the carrier signal is varied in proportion to the message signal.</li>
