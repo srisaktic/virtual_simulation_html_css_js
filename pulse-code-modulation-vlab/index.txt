@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>pcm</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <canvas id="myCanvas" width="700" height="200" style="border:1px solid #d3d3d3;"></canvas>
+    <br>
+    <canvas id="canvas2" width="700" height="200" style="border:1px solid #d3d3d3;"></canvas>
+    <br>
+    <canvas id="canvas3" width="700" height="200" style="border:1px solid #d3d3d3;"></canvas>
+
+    <label for="fs">Sampling frequency:</label>
+  <input type="number" id="fs" name="quantity" min="6" max="60" value="20">
+  <input type="button" name="submit" value="start" onclick="start()">
+
+
+  <label for="fs">no of bits:</label>
+  <input type="number" id="bits" name="bits" min="1" max="16" value="4">
+  <input type="button" name="submit" value="start" onclick="start()">
+
+
+    <script type="text/javascript" src="/js/input.js"></script>
+    <script type="text/javascript" src="/js/sampling.js"></script>
+    <script type="text/javascript" src="/js/quantization.js"></script>
+    <script type="text/javascript" src="/js/control.js"></script>
+  </body>
+</html>

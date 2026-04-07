@@ -1,0 +1,145 @@
+/* * {
+    border: 1px solid black;
+} */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+#simscreen {
+    width: 800px;
+    border-radius: 5px;
+    height: 600px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+#header {
+    background-color: rgb(104, 100, 100);
+    border-radius: 5px;
+}
+
+#main-heading {
+    margin: 2px;
+    padding-left: 10px; 
+    color: #fff;
+    font-size: 30px;
+    display: inline-block;
+}
+
+#sim-buttons-container {
+    float: right;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.sim-buttons {
+    border: none;
+    padding: 7px 6px;
+    cursor: pointer;
+}
+
+.sim-buttons:hover {
+    background-color: rgb(185, 185, 185);
+}
+
+.sim-buttons:focus {
+    outline: none;
+}
+
+.section {
+    width: 800px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.display {
+    display: inline-block;
+}
+
+.container {
+    display: inline-block;
+}
+
+.canvas-container {
+    background: url('../images/grid.png');
+    background-color: #bbbdbb;
+    width: 455px;
+    height: 130px;
+}
+
+.display-container {
+    width: 300px;
+    height: 130px;
+    padding-left: 30px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.heading {
+    font-size: 18px;
+    border-radius: 7px;
+    color: #fff;
+    background-color: #000;
+    margin: 1px;
+    padding: 5px;
+}
+
+#result {
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    border: 0;
+    /* margin-left: 10px; */
+    float: right;
+    margin-top: 0;
+}
+
+#result-heading {
+    color: #fff;
+    background-color: #000;
+    margin: 0;
+    padding: 5px;
+}
+
+#result-body {
+    padding: 2px;
+    padding-left: 30px;
+    border: 0;
+    border-right: 0;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.formula {
+    font-size: 18px;
+    font-weight: normal; 
+}
+
+.label{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.canvas-container{
+    margin:5px 5px 5px 5px;
+    padding: 0px 0px 5px 0px;
+    border: 1px solid;
+    border-radius:5px;
+}
+
+.display-container{
+    width:30%;
+    position:relative;
+}
+
+.demodulation-controls {
+    padding: 5px 0 0 5px;
+}
+
+.status-text {
+    margin: 0;
+    color: #008000;
+    font-size: 1.05rem;
+}

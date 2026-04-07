@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel=stylesheet href="css/style.css">
+        <title>AM Simulation</title>
+    </head>
+    <body>
+        <div id="simscreen">
+
+            <div id="header">
+                <h1 id="main-heading">Pulse Code Modulation</h1>
+                <div id="sim-buttons-container">
+                    <button onclick="start()" id="start" class="sim-buttons">START</button>
+                    <button onclick="quantize()" id="modulate" class="sim-buttons">QUANTIZE</button>
+                    <button onclick="modulate()" id="demodulate" class="sim-buttons">MODULATE</button>
+                </div>
+            </div>
+
+            <div id="modulation-screen">
+
+              <h2 class="heading">Message Signal</h2>
+
+                <div class="section" id="message-data">
+                    <div class="canvas-container container">
+                        <canvas id="myCanvas"></canvas><br>
+                    </div>
+                    <div class="display-container container">
+                      <label for="fs">Sampling frequency:</label>
+                    <input type="number" id="fs" name="quantity" min="5" max="60" value="15" step="2">
+                    </div>
+                </div>
+
+                <h2 class="heading">sampled Signal </h2>
+
+                <div class="section" id="carrier-data">
+                    <div class="canvas-container container">
+                        <canvas id="canvas2"></canvas><br>
+                    </div>
+                    <div class="display-container container">
+
+                        <label for="fs">no of bits:</label>
+                        <input type="number" id="bits" name="bits" min="1" max="16" value="4">
+                    </div>
+                </div>
+                <h2 class="heading">quantized Signal</h2>
+
+                <div class="section" id="am-data">
+                    <div class="canvas-container container">
+                        <canvas id="canvas3" ></canvas><br><br>
+                    </div>
+                    <div class="display-container container" id="result">
+                        <h3 id="result-heading">Result</h3>
+                        <div id="result-body">
+                            <p>Bit Stream &nbsp; = <span id="bitStream">1</span></p>
+                        </div>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="demodulation-screen">
+              <h2 class="heading">Pulse Code Modulated Signal</h2>
+                <div class="section" id="am-data-d">
+                    <div class="canvas-container container">
+                        <canvas id="modulated" ></canvas><br><br>
+                    </div>
+                    <!-- <div> -->
+                </div>
+                <h2 class="heading">Retrieved Message Signal </h2>
+
+                <div class="section" id="message-data-d">
+                    <div class="canvas-container container">
+                        <canvas id="message-d" ></canvas><br>
+                    </div>
+                    <!-- <div> -->
+                </div>
+
+                <div class="section" id="message-data-d">
+                        <div class="display-container container demodulation-controls" style="padding: 0" id="result">
+                        <h3 id="result-heading">Result</h3>
+                        <div id="result-body2">
+
+                          <p>Bit Stream &nbsp; = <span id="bitStream2">1</span></p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/input.js"></script>
+        <script type="text/javascript" src="js/sampling.js"></script>
+        <script type="text/javascript" src="js/quantization.js"></script>
+        <script type="text/javascript" src="js/modulate.js"></script>
+        <script type="text/javascript" src="js/demodulate.js"></script>
+        <script type="text/javascript" src="js/control.js"></script>
+
+
+    </body>
+</html>

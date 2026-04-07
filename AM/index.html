@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel=stylesheet href="css/styles.css">
+        <title>AM Simulation</title>
+    </head>  
+    <body>
+        <div id="simscreen">
+            
+            <div id="header">
+                <h1 id="main-heading">Amplitude Modulation</h1>
+                <div id="sim-buttons-container">
+                    <button onclick="startSim()" id="start" class="sim-buttons">START</button>
+                    <button onclick="stopSim()" id="stop" class="sim-buttons">STOP</button>
+                    <button onclick="modulate()" id="modulate" class="sim-buttons">MODULATE</button>
+                    <button onclick="demodulate()" id="demodulate" class="sim-buttons">DEMODULATE</button>
+                </div>
+            </div>
+
+            <div id="modulation-screen">
+                <div class="section" id="message-data">
+                    <h2 class="heading">Message Signal &nbsp; <span class="formula">m(t)=A<sub>m</sub>cos(2πf<sub>m</sub>t)</span></h2>
+                    <div class="canvas-container container">
+                        <canvas id="message" width="450" height="130"></canvas><br>
+                    </div>
+                    <div class="display-container container">
+                        <span class="label">Message Signal Amplitude</span> <br><input id="m-amplitude" step="0.5" type="range" value=10 min=1 max=30>
+                        <p id="m-amplitude-display" class="display">10</p> Volts<br>
+                        <span class="label">Message Signal Frequency</span> <br><input id="m-frequency" type="range" value=3000 min=500 step="500" max=10000>
+                        <p id="m-frequency-display" class="display">3000</p> Hz<br><br>
+                    </div>
+                </div>
+        
+                <div class="section" id="carrier-data">
+                    <h2 class="heading">Carrier Signal &nbsp; <span class="formula">c(t)=A<sub>c</sub>cos(2πf<sub>c</sub>t)</span></h2>
+                    <div class="canvas-container container">
+                        <canvas id="carrier" width="450" height="130"></canvas><br>
+                    </div>
+                    <div class="display-container container">
+                        <span class="label">Carrier Signal Amplitude</span> <br><input id="c-amplitude" step="0.5" type="range" value=10 min=1 max=30>
+                        <p id="c-amplitude-display" class="display">10</p> Volts<br>
+                        <span class="label">Carrier Signal Frequency</span> <br><input id="c-frequency" type="range" value=20 min=10 max=100>
+                        <p id="c-frequency-display" class="display">20</p> KHz<br><br>
+                    </div>
+                </div>
+        
+                <div class="section" id="am-data">
+                    <h2 class="heading">Amplitude Modulated Signal</h2>
+                    <div class="canvas-container container">
+                        <canvas id="am" width="450" height="130"></canvas><br><br>
+                    </div>
+                    <div class="display-container container" id="result">
+                        <h3 id="result-heading">Result</h3>
+                        <div id="result-body">
+                            <p>s(t)=[A<sub>c</sub>+A<sub>m</sub>cos(2πf<sub>m</sub>t)]cos(2πf<sub>c</sub>t)</p>
+                            <p>Modulation Index &nbsp;μ=A<sub>m</sub>/A<sub>c</sub> = <span id="modulation-index">1</span></p>
+                            <p class="status-text" id="status">Critical Modulation</p>
+                        </div>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+
+            <div id="demodulation-screen">
+                <div class="section" id="am-data-d">
+                    <h2 class="heading">Amplitude Modulated Signal</h2>
+                    <div class="canvas-container container">
+                        <canvas id="am-d" width="450" height="130"></canvas><br><br>
+                    </div>
+                    <!-- <div> -->
+                </div>
+
+                <div class="section" id="message-data-d">
+                    <h2 class="heading">Message Signal &nbsp; <span class="formula">m(t)=A<sub>m</sub>cos(2πf<sub>m</sub>t)</span></h2>
+                    <div class="canvas-container container">
+                        <canvas id="message-d" width="450" height="130"></canvas><br>
+                    </div>
+                    <!-- <div> -->
+                </div>
+
+                <div class="section" id="message-data-d">
+                    <div class="display-container container demodulation-controls">
+                        <span class="label">Message Signal Amplitude</span> <br><input id="m-amplitude-d" step="0.5" type="range" value=10 min=1 max=30>
+                        <p id="m-amplitude-display-d" class="display">10</p> Volts<br>
+                        <span class="label">Message Signal Frequency</span> <br><input id="m-frequency-d" type="range" value=3000 min=500 step="500" max=10000>
+                        <p id="m-frequency-display-d" class="display">3000</p> Hz<br><br>
+                    </div>
+
+                    <div class="display-container container demodulation-controls">
+                        <span class="label">Carrier Signal Amplitude</span> <br><input id="c-amplitude-d" step="0.5" type="range" value=10 min=1 max=30>
+                        <p id="c-amplitude-display-d" class="display">10</p> Volts<br>
+                        <span class="label">Carrier Signal Frequency</span> <br><input id="c-frequency-d" type="range" value=20 min=10 max=100>
+                        <p id="c-frequency-display-d" class="display">20</p> KHz<br><br>
+                    </div>
+
+                    <div class="display-container container demodulation-controls" style="padding: 0" id="result">
+                        <h3 id="result-heading">Result</h3>
+                        <div id="result-body">
+                            <p>s(t)=[A<sub>c</sub>+A<sub>m</sub>cos(2πf<sub>m</sub>t)]cos(2πf<sub>c</sub>t)</p>
+                            <p>Modulation Index &nbsp;μ=A<sub>m</sub>/A<sub>c</sub> = <span id="modulation-index-d">1</span></p>
+                            <p class="status-text" id="status-d">Critical Modulation</p>
+                        </div>  
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <script src="js/modulation/message.js"></script>
+        <script src="js/modulation/carrier.js"></script>
+        <script src="js/modulation/am.js"></script>
+        <script src="js/demodulation/messageD.js"></script>
+        <script src="js/demodulation/amD.js"></script>
+        <script src="js/display.js"></script>
+        <script src="js/controls.js"></script>
+        <script src="js/inSimQuestions.js"></script>
+    </body>
+</html>
